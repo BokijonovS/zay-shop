@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        {% block title %}
+            Zay Shop
+        {% endblock title %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="{% static 'assets/img/apple-icon.png' %}">
+
+    {% include 'components/_styles.html' %}
+    <!--
+
+    TemplateMo 559 Zay Shop
+
+    https://templatemo.com/tm-559-zay-shop
+
+    -->
+</head>
+
+<body>
+<!-- Start Top Nav -->
+{% include 'components/_navbar.html' %}
+<!-- Close Top Nav -->
+
+
+<!-- Header -->
+{% include 'layouts/header.html' %}
+<!-- Close Header -->
+
+<!-- Modal -->
+{% include 'components/_modal.html' %}
+
+{% block main %}
+
+{% endblock main %}
+
+<!-- Start Footer -->
+{% include 'layouts/footer.html' %}
+<!-- End Footer -->
+
+<!-- Start Script -->
+{% include 'components/_scripts.html' %}
+<!-- End Script -->
+</body>
+
+</html>

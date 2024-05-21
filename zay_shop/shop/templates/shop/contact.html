@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <div class="container-fluid bg-light py-5">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Contact Us</h1>
+            <p>
+                Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+    </div>
+    <!-- Start Contact -->
+    <div class="container py-5">
+        <div class="row py-5">
+                            <form class="contact-form" action="https://formspree.io/f/meqyvpkq" method="POST" id="my-form">
+                    {% csrf_token %}
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Say hello!</p>
+                    </div>
+
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="text" id="form3Example3" name="fullname" class="form-control form-control-lg"
+                               placeholder="Enter your name"/>
+                        <label class="form-label field name" for="form3Example3">Name</label>
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="email" id="form3Example3" name="email" class="form-control form-control-lg field email"
+                               placeholder="Enter a valid email address"/>
+                        <label class="form-label" for="form3Example3">Email address</label>
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="text" id="form3Example3" name="job" class="form-control form-control-lg field "
+                               placeholder="Enter a valid email address"/>
+                        <label class="form-label" for="form3Example3">Your job</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <textarea id="form2Example3" class="message form-control px-2 py-2 field textarea" style="border-radius: 5px" name="usermessage " cols="56" rows="5" placeholder="Input your thoughts here.."
+                                      required></textarea>
+                    </div>
+
+
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <a target="_blank">
+                            <button type="submit" name="submit"  class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Submit
+                        </button>
+                        </a>
+                    </div>
+
+                </form>
+
+        </div>
+    </div>
+    <!-- End Contact -->
+
+{% endblock main %}
+
