@@ -148,7 +148,7 @@
                             <p class="card-text">
                                 {{ product.description|truncatewords:15 }}
                             </p>
-                            <p class="text-muted">Reviews (24)</p>
+                            <p class="text-muted">Reviews ({{ product.review_set.count }})</p>
                         </div>
                     </div>
                 </div>

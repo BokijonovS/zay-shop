@@ -193,21 +193,21 @@ def save_review(request, product_slug):
         return redirect('login')
 
 
-
 def create_checkout_sessions(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
     user_cart = CartAuthenticatedUser(request)
     cart_info = user_cart.get_cart_info()
     total_price = cart_info['cart_total_price']
     total_quantity = cart_info['cart_total_quantity']
+
     session = stripe.checkout.Session.create(
         line_items=[{
-            'price_data':{
+            'price_data': {
                 'currency': 'usd',
                 'product_data': {
-                    'Online shop items'
+                    'name': 'Online shop items'
                 },
-                'unit_amount': int(total_price*100)
+                'unit_amount': int(total_price * 100)
             },
             'quantity': total_quantity
         }],
@@ -219,5 +219,5 @@ def create_checkout_sessions(request):
 
 
 def success_payment(request):
-    return render(request, 'success.html')
+    return render(request, 'shop/success.html')
 
